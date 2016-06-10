@@ -1,0 +1,14 @@
+{
+  "name": "p4c_frontend",
+  "version": "0.1.0",
+  "description": "P4Cプロジェクトのfrontendのnodeライブラリ管理",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "jp.co.septeni-original",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
