@@ -5,6 +5,9 @@ const buildDir = baseDir + '.build/'
 const buildMainDir = buildDir + 'main/'
 const distDir = baseDir + 'dist/'
 const diffDir = buildDir + '.diff/'
+const librarySrcDir = baseDir + 'library/'
+const libraryBuildDir = buildMainDir + 'library/'
+const libraryDistDir = distDir + 'library/'
 
 export default {
     srcDir: srcDir,
@@ -24,6 +27,18 @@ export default {
             dist: distDir + 'js/',
             output: {
             filename: 'bundle.js'
+        }
+    },
+    library: {
+        srcDir: librarySrcDir,
+            buildDir: libraryBuildDir,
+            distDir: libraryDistDir,
+            js: {
+            build: libraryBuildDir + 'js/',
+                dist: libraryDistDir + 'js/',
+                output: {
+                filename: 'bundle.js'
+            }
         }
     }
 }
