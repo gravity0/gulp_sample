@@ -4,6 +4,6 @@ import runSequence from 'run-sequence'
 gulp.task('default', () =>
     runSequence(
         'clean',
-        ['html', 'library']
+        ['html', 'library', 'script']
     )
 )

@@ -22,23 +22,39 @@ export default {
     },
     script: {
         src: srcMainDir + 'scripts/**/*.js',
-            diff: diffDir + 'scripts/',
-            build: buildMainDir + 'js/',
-            dist: distDir + 'js/',
-            output: {
-            filename: 'bundle.js'
+        diff: diffDir + 'scripts/',
+        build: buildMainDir + 'js/',
+        dist: distDir + 'js/',
+        output: {
+          filename: 'bundle.js'
         }
     },
     library: {
         srcDir: librarySrcDir,
-            buildDir: libraryBuildDir,
-            distDir: libraryDistDir,
-            js: {
-            build: libraryBuildDir + 'js/',
-                dist: libraryDistDir + 'js/',
-                output: {
-                filename: 'bundle.js'
-            }
+        buildDir: libraryBuildDir,
+        distDir: libraryDistDir,
+        js: {
+          build: libraryBuildDir + 'js/',
+          dist: libraryDistDir + 'js/',
+          output: {
+          filename: 'bundle.js'
         }
+      }
+    },
+    webpack: {
+      entry: srcMainDir + "scripts/" + "main.js",
+      output: {
+        filename: "main.js"
+      },
+      module: {
+        // babel Loaderを指定してWebpackがBabelのコンパイルをできるように
+        loaders: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: "babel-loader"
+          }
+        ]
+      }
     }
 }
