@@ -42,19 +42,40 @@ export default {
       }
     },
     webpack: {
-      entry: srcMainDir + "scripts/" + "main.js",
+      entry: [
+        srcMainDir + 'app.js'
+      ],
       output: {
-        filename: "main.js"
+        path: "/dist/js",
+        publicPath: "/dist/",
+        filename: "app.js"
       },
+//      watch: true,
       module: {
-        // babel Loaderを指定してWebpackがBabelのコンパイルをできるように
         loaders: [
           {
             test: /\.js$/,
-            exclude: /node_modules/,
-            loader: "babel-loader"
+            // excluding some local linked packages.
+            // for normal use cases only node_modules is needed.
+            exclude: /node_modules|vue\/src|vue-router\//,
+            loader: 'babel'
+          },
+          {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'sass']
+          },
+          {
+            test: /\.vue$/,
+            loader: 'vue'
           }
         ]
+      },
+      babel: {
+        presets: ['es2015'],
+        plugins: ['transform-runtime']
+      },
+      resolve: {
+        modulesDirectories: ['node_modules']
       }
     }
 }

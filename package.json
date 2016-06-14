@@ -32,9 +32,14 @@
     "gulp-useref": "^3.1.0",
     "gulp-webpack": "^1.5.0",
     "main-bower-files": "^2.13.1",
+    "node-sass": "^3.7.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.1",
-    "vue-hot-reload-api": "^2.0.0",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "vinyl-named": "^1.1.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vue-hot-reload-api": "^1.2.2",
     "vue-html-loader": "^1.2.2",
     "vue-loader": "^8.5.2",
     "vue-style-loader": "^1.0.0",
@@ -48,5 +53,11 @@
     "plugins": [
       "transform-runtime"
     ]
+  },
+  "dependencies": {
+    "foundation-sites": "^6.2.3",
+    "vue": "^1.0.24",
+    "vue-resource": "^0.7.4",
+    "vue-router": "^0.7.13"
   }
 }
